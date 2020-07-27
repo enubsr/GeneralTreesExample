@@ -10,6 +10,7 @@ import positionexample.Position;
 /**
  *
  * @author Enubs
+ * @param <E>
  */
 public abstract class AbstractTree<E> implements Tree<E> {
     @Override
@@ -42,17 +43,10 @@ public abstract class AbstractTree<E> implements Tree<E> {
     
     public int height(Position<E> p){
         int h = 0;
-        
-        //for(int i = 0; i < children(p).length; i++){
-        // Position c = children(p);
-        // h = Math.max(h, 1 + height(c));
-        //}
-        
-        //foreach
         for(Position<E> c : children(p)){
             h = Math.max(h, 1 + height(c));
         }
-        
+
         return h;
     }
 }
